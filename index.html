@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            Hacked By Kryp70n-X
+        </title>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css" />
+        <style>
+        .scroll {
+         background: black url("https://kryp70n-x.github.io/deface/bg.png") no-repeat fixed center top;
+      }
+            body{background-color: black;}
+                       .output {
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+  color: #00ffff;
+  text-shadow: 2px 2px 5px #ffffff;
+  b {
+    font-size: 30px;
+  }
+}
+
+/* Cursor Styling */
+
+.cursor::after {
+  content: "";
+  display: inline-block;
+  margin-left: 3px;
+  background-color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+b.cursor::after {
+  height: 24px;
+  width: 13px;
+}
+p.cursor::after {
+  height: 13px;
+  width: 6px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.hacked{color:#ffffff; text-shadow:2px 2px 5px red;}
+.w{color:#00ffff; text-shadow: 1px 2px #ffffff;}
+        </style>
+    </head>
+    <body class="scroll">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <center><h1 class="hacked">Hacked By Kryp70n-X</h1></center>
+<div style="font-size:14px;color:#ffffff;">
+<marquee style="position:relative;left:100px;top:0px;height:40px;" scrollamount="2" direction="down">..... We are Illusionist.....</marquee>
+<marquee style="position:relative;left:8px;top:-6px;height:50px;" scrollamount="3" direction="down">..... We are HidDen.....</marquee>
+<marquee style="position:relative;left:151px;top:-7px;height:30px;" scrollamount="5" direction="down">..... FUck YOur SysTem.....</marquee>
+<marquee style="position:relative;left:51px;top:-8px;height:50px;" direction="down">..... No System Is SafE.....</marquee>
+<marquee style="position:relative;left:124px;top:-5px;height:60px;" direction="down">..... FuCk Your Control.....</marquee>
+<marquee style="position:relative;left:122px;top:-8px;height:20px;" scrollamount="7" direction="down">.....Fuck You.....</marquee>
+<marquee style="position:relative;left:55px;top:-9px;height:30px;" scrollamount="5" direction="down">.....Haha.....</marquee>
+<marquee style="position:relative;left:98px;top:-15px;height:30px;" scrollamount="6" direction="down">.....Die().....</marquee>
+<marquee style="position:relative;left:93px;top:-11px;height:30px;" scrollamount="1" direction="down">.....SyStEm Exit()...</marquee>
+</div>
+<center>
+
+<div class="container py-5">    <p><font style="color:red;">[+]</font><font size="5" style="color:green;">Message</font><font style="color:red;">[+]</font></p>
+  <div class="output" id="output">
+    <b class="cursor"></b>
+    <p></p>
+  </div>
+</div></center>
+<script>// values to keep track of the number of letters typed, which quote to use. etc. Don't change these values.
+var i = 0,
+ a = 0,
+ isBackspacing = false,
+ isParagraph = false;
+
+// Typerwrite text content. Use a pipe to indicate the start of the second line "|".
+var textArray = [
+ "Dear Administrator, your website has been hacked by Krypton-X|..........",
+ "I found a vulnerability in your system|..........",
+ "Please improve your security|..........",
+ "Contact your web developer to fixed this vulnerability|..........",
+ "Or i will be back|.........."
+];
+
+// Speed (in milliseconds) of typing.
+var speedForward = 100, //Typing Speed
+ speedWait = 1000, // Wait between typing and backspacing
+ speedBetweenLines = 1000, //Wait between first and second lines
+ speedBackspace = 25; //Backspace Speed
+
+//Run the loop
+typeWriter("output", textArray);
+
+function typeWriter(id, ar) {
+ var element = $("#" + id),
+  aString = ar[a],
+  eHeader = element.children("b"), //Header element
+  eParagraph = element.children("p"); //Subheader element
+
+ // Determine if animation should be typing or backspacing
+ if (!isBackspacing) {
+  // If full string hasn't yet been typed out, continue typing
+  if (i < aString.length) {
+   // If character about to be typed is a pipe, switch to second line and continue.
+   if (aString.charAt(i) == "|") {
+    isParagraph = true;
+    eHeader.removeClass("cursor");
+    eParagraph.addClass("cursor");
+    i++;
+    setTimeout(function () {
+     typeWriter(id, ar);
+    }, speedBetweenLines);
+
+    // If character isn't a pipe, continue typing.
+   } else {
+    // Type header or subheader depending on whether pipe has been detected
+    if (!isParagraph) {
+     eHeader.text(eHeader.text() + aString.charAt(i));
+    } else {
+     eParagraph.text(eParagraph.text() + aString.charAt(i));
+    }
+    i++;
+    setTimeout(function () {
+     typeWriter(id, ar);
+    }, speedForward);
+   }
+
+   // If full string has been typed, switch to backspace mode.
+  } else if (i == aString.length) {
+   isBackspacing = true;
+   setTimeout(function () {
+    typeWriter(id, ar);
+   }, speedWait);
+  }
+
+  // If backspacing is enabled
+ } else {
+  // If either the header or the paragraph still has text, continue backspacing
+  if (eHeader.text().length > 0 || eParagraph.text().length > 0) {
+   // If paragraph still has text, continue erasing, otherwise switch to the header.
+   if (eParagraph.text().length > 0) {
+    eParagraph.text(
+     eParagraph.text().substring(0, eParagraph.text().length - 1)
+    );
+   } else if (eHeader.text().length > 0) {
+    eParagraph.removeClass("cursor");
+    eHeader.addClass("cursor");
+    eHeader.text(eHeader.text().substring(0, eHeader.text().length - 1));
+   }
+   setTimeout(function () {
+    typeWriter(id, ar);
+   }, speedBackspace);
+
+   // If neither head or paragraph still has text, switch to next quote in array and start typing.
+  } else {
+   isBackspacing = false;
+   i = 0;
+   isParagraph = false;
+   a = (a + 1) % ar.length; //Moves to next position in array, always looping back to 0
+   setTimeout(function () {
+    typeWriter(id, ar);
+   }, 50);
+  }
+ }
+}</script>
+</body>
+</html>
